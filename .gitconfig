@@ -20,6 +20,7 @@
        	untracked = cyan
 [alias]
 	tree = log --graph --pretty=oneline --abbrev-commit
+	local = log --pretty=oneline @{u}..HEAD
 [apply]
 	whitespace = strip
 [pager]
