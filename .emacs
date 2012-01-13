@@ -1,3 +1,5 @@
+(setq require-final-newline t)
+
 (defun iwb ()
   "indent whole buffer"
   (interactive)
