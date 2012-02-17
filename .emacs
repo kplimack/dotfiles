@@ -8,4 +8,4 @@
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
-(global-set-key [f12] ‘iwb)
+(global-set-key [f12] 'iwb)
