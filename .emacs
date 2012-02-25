@@ -9,3 +9,5 @@
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
 (global-set-key [f12] 'iwb)
+(global-set-key [f10] 'show-trailing-whitespace)
+(global-set-key [f11] 'delete-trailing-whitespace)
