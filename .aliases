@@ -4,4 +4,4 @@ alias phpinfo='php -r "phpinfo();"'
 alias acs='apt-cache search'
 alias agi='sudo apt-get install'
 alias mtr='mtr --curses'
-
+alias cleaner="find . -name '*~' -exec rm -f {} \;"
