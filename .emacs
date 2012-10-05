@@ -1,6 +1,6 @@
 (setq require-final-newline t)
 (setq auto-mode-alist (cons '("\\.tt$" . html-mode) auto-mode-alist))
-
+(setq-default show-trailing-whitespace t)
 
 (defun iwb ()
   "indent whole buffer"
