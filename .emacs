@@ -11,3 +11,5 @@
 (global-set-key [f12] 'iwb)
 (global-set-key [f10] 'show-trailing-whitespace)
 (global-set-key [f11] 'delete-trailing-whitespace)
+(add-to-list 'load-path "~/.emacs.d/")
+(load "json-mode.el")
