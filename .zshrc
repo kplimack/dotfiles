@@ -35,10 +35,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
-fi
-
-if [ -f ~/.aliases ] ; then
-    . ~/.aliases
+if [ -f ~/.shell_common ] ; then
+    . ~/.shell_common
 fi

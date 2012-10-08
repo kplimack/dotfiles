@@ -1,0 +1,6 @@
+export VISUAL=emacs
+export EDITOR=emacs
+
+if [ -f ~/.aliases ] ; then
+   . ~/.aliases
+fi
