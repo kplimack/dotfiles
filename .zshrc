@@ -33,6 +33,8 @@ plugins=(git github osx pip brew django python ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH=$PATH:/usr/local/sbin
+
 # Customize to your needs...
 
 if [ -f ~/.shell_common ] ; then
