@@ -1,1 +1,8 @@
-Attention: I have nothing to say
+Setup
+===
+cd && git clone https://github.com/kplimack/dotfiles.git
+for i in $(find ~/dotfiles -name '.*')
+do
+  A=$(echo $i | cut -f2 -d '/')
+  ln -nfs $A $i
+done
