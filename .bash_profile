@@ -1,9 +1,12 @@
 # .bash_profile
 
-### Start-Keychain ### 
-/usr/bin/keychain $HOME/.ssh/id_rsa
-source $HOME/.keychain/$HOSTNAME-sh
-### End-Keychain ###
+
+if [ $(uname -s) == "Dawrin" ] ; then
+    ### Start-Keychain ### 
+    /usr/bin/keychain $HOME/.ssh/id_rsa
+    source $HOME/.keychain/$HOSTNAME-sh
+    ### End-Keychain ###
+fi
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
