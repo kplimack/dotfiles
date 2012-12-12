@@ -26,7 +26,7 @@ fi
 # should probably make sure we're not grabbing arguments here
 TARGET_HOST="$1"
 if [ $(grep "$TARGET_HOST" ~/.ssh/known_hosts | wc -l) -lt 1 ] ; then
-    $("$SSH_COPY_ID" "$TARGET_HOST") || echo "SSH-COPY-ID Failed: $!" && exit 1
+    $("$SSH_COPY_ID" "$TARGET_HOST")
 fi
 
 "$SSH_CLIENT" $@
