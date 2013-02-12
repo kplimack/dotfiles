@@ -27,3 +27,5 @@
 	color = true
 [status]
 	color = true
+[branch]
+	autosetuprebase = always

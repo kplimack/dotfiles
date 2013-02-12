@@ -5,5 +5,8 @@ alias acs='apt-cache search'
 alias agi='sudo apt-get install'
 alias mtr='mtr --curses'
 alias cleaner="find . -name '*~' -exec rm -f {} \;"
-alias ssh="~/dotfiles/bin/ssh"
 alias torbox='mv ~/Downloads/*.torrent ~/Dropbox/Dropbox/Torrents'
+
+if [ -f ~/dotfiles/.local_aliases ] ; then
+   . ~/dotfiles/.local_aliases
+fi
