@@ -1,8 +1,16 @@
 Setup
 ===
-cd && git clone https://github.com/kplimack/dotfiles.git
-for i in $(find ~/dotfiles -name '.*')
+git clone https://github.com/kplimack/dotfiles.git
+
+FILES_I_NEED=".aliases .bash_aliases .bash_profile .bashrc .git .gitconfig .gitignore .oh-my-zsh .oh-my-zsh/ .git .shell_common .ssh .tmux.conf .zshrc .zshrc.pre-oh-my-zsh"
+
+for f in $FILES_I_NEED
 do
-  A=$(echo $i | cut -f2 -d '/')
-  ln -nfs $A $i
+ln -nfs ~/dotfiles/$i ~/$i
 done
+
+cd dotfiles
+git submodule init
+git submodule update
+
+
