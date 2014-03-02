@@ -4,3 +4,7 @@ export EDITOR=emacs
 if [ -f ~/.aliases ] ; then
    . ~/.aliases
 fi
+
+if [ -f ~/dotfiles/.aliases ] ; then
+   . ~/dotfiles/.aliases
+fi
