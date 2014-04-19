@@ -8,3 +8,7 @@ alias gitup="git pull --rebase && git push"
 if [ -f ~/dotfiles/.local_aliases ] ; then
    . ~/dotfiles/.local_aliases
 fi
+
+if [ -f ~/.local_aliases ] ; then
+    . ~/.local_aliases
+fi
