@@ -40,3 +40,14 @@ export PATH=$PATH:/usr/local/sbin
 if [ -f ~/.shell_common ] ; then
     . ~/.shell_common
 fi
+if [ -f ~/repos/dotfiles/.shell_common ] ; then
+    . ~/repos/dotfiles/.shell_common
+fi
+
+
+
+
+for sh in /etc/profile.d/*.sh ; do
+        [ -r "$sh" ] && . "$sh"
+done
+unset sh

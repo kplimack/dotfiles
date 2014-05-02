@@ -8,3 +8,7 @@ fi
 if [ -f ~/dotfiles/.aliases ] ; then
    . ~/dotfiles/.aliases
 fi
+
+if [ -f ~/repos/dotfiles/.aliases ] ; then
+   . ~/repos/dotfiles/.aliases
+fi
