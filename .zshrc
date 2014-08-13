@@ -43,11 +43,19 @@ fi
 if [ -f ~/repos/dotfiles/.shell_common ] ; then
     . ~/repos/dotfiles/.shell_common
 fi
-
-
+if [ -f ~/.awsrc ] ; then
+    . ~/.awsrc
+fi
 
 
 for sh in /etc/profile.d/*.sh ; do
-        [ -r "$sh" ] && . "$sh"
+    [ -r "$sh" ] && . "$sh"
 done
 unset sh
+
+if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh && -f /usr/local/opt/chruby/share/chruby/auto.sh ] ; then
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
+    source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
+
+eval "$(chef shell-init bash)"
