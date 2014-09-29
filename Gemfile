@@ -1,5 +1,7 @@
+source 'https://rubygems.org'
 
 
+# Knife Stuff
 gem "knife-block"
 gem "knife-bulkchangeenvironment"
 gem "knife-ec2"
@@ -12,3 +14,7 @@ gem "knife-solo"
 gem "knife-solo_data_bag"
 gem "knife-spork"
 gem "knife-windows"
+gem 'knife-essentials'
+
+# Cookbook Stuff
+gem 'berkshelf'
