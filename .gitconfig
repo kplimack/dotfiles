@@ -1,23 +1,23 @@
 [user]
-	name = Kyle Jake Plimack
-	email = kyle.plimack@gmail.com
+	name = Jake Plimack
+	email = jake.plimack@gmail.com
 [color]
 	branch = auto
 	diff = auto
 	status = auto
 [color "branch"]
 	current = yellow reverse
-       	local = yellow
-       	remote = green
+    local = yellow
+    remote = green
 [color "diff"]
 	meta = yellow bold
-       	frag = magenta bold
-       	old = red
-       	new = cyan
+    frag = magenta bold
+    old = red
+    new = cyan
 [color "status"]
 	added = yellow
-       	changed = green
-       	untracked = cyan
+    changed = green
+    untracked = cyan
 [alias]
 	tree = log --graph --pretty=oneline --abbrev-commit --decorate --color --all
 	local = log --pretty=oneline @{u}..HEAD
@@ -31,3 +31,5 @@
 	autosetuprebase = always
 [push]
 	default = simple
+[core]
+    ignorecase = false
