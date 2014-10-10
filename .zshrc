@@ -53,9 +53,9 @@ for sh in /etc/profile.d/*.sh ; do
 done
 unset sh
 
-if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh && -f /usr/local/opt/chruby/share/chruby/auto.sh ]] ; then
-    source /usr/local/opt/chruby/share/chruby/chruby.sh
-    source /usr/local/opt/chruby/share/chruby/auto.sh
-fi
+# if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh && -f /usr/local/opt/chruby/share/chruby/auto.sh ]] ; then
+#     source /usr/local/opt/chruby/share/chruby/chruby.sh
+#     source /usr/local/opt/chruby/share/chruby/auto.sh
+# fi
 
 eval "$(chef shell-init bash)"
