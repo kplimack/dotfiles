@@ -15,6 +15,13 @@ gem "knife-solo_data_bag"
 gem "knife-spork"
 gem "knife-windows"
 gem 'knife-essentials'
+gem 'knife-cleanup'
 
 # Cookbook Stuff
 gem 'berkshelf'
+
+# Holy Shit Stuff
+gem 'gist'
+gem 'chef-metal'
+gem 'chef-metal-vagrant'
+gem 'chef-metal-fog'
