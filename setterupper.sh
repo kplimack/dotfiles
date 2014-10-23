@@ -23,3 +23,8 @@ done
 cd ~/.oh-my-zsh
 git submodule update --init
 chsh -s $(which zsh)
+
+# emacs setup
+mkdir -p $HOME/.emacs.d/personal/savefile/
+touch $HOME/.emacs.d/personal/savefile/savehist
+touch $HOME/.password.el.gpg
