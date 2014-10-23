@@ -4,3 +4,6 @@
 [submodule "cyberpunk-theme.el"]
 	path = cyberpunk-theme.el
 	url = https://github.com/n3mo/cyberpunk-theme.el.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = git@github.com:kplimack/.emacs.d.git
