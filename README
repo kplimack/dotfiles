@@ -1,16 +1,9 @@
 Setup
 ===
-git clone https://github.com/kplimack/dotfiles.git
-
-FILES_I_NEED=".aliases .bash_aliases .bash_profile .bashrc .git .gitconfig .gitignore .oh-my-zsh .oh-my-zsh/ .git .shell_common .ssh .tmux.conf .zshrc .zshrc.pre-oh-my-zsh"
-
-for f in $FILES_I_NEED
-do
-ln -nfs ~/dotfiles/$i ~/$i
-done
-
-cd dotfiles
-git submodule init
-git submodule update
-
+````
+mkdir -p ~/repos
+git clone https://github.com/kplimack/dotfiles.git repos/dotfiles
+bash repos/dotfiles/setterupper.sh
+````
+* If you have any issues, fix setterupper, don't just hack it
 
