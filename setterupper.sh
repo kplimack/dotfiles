@@ -5,14 +5,16 @@ if [ ! -z $DEBUG ] ; then
     set -e
 fi
 
-DOTFILES_DIR=$(dirname "$0"); SCRIPT_PATH=$(eval "cd \"$SCRIPT_PATH\" && pwd")
-EXCLUDE='(setterupper|.el|~|README|lock|#)'
+DOTFILES_DIR="$HOME/repos/dotfiles"; SCRIPT_PATH=$(eval "cd \"$SCRIPT_PATH\" && pwd")
+EXCLUDE='(setterupper|.el|~|README|lock|#|\.Trash)'
 
-cd
-for i in $(ls -a $SCRIPT_PATH | egrep -v "$EXCLUDE") ; do
-    CMD="ln -nfs $DOTFILES_DIR/$i"
+cd $HOME
+for i in $(ls -a $DOTFILES_DIR | egrep -v "$EXCLUDE" | egrep -v "^\.+$") ; do
+    if [ ! -d $HOME/$i ] ; then
+	CMD="ln -nfs $DOTFILES_DIR/$i"
+    fi
     if [ -z $DEBUG ] ; then
-        $(CMD)
+        $($CMD)
     else
         echo "$CMD"
     fi
@@ -20,3 +22,4 @@ done
 
 cd ~/.oh-my-zsh
 git submodule update --init
+chsh -s $(which zsh)
