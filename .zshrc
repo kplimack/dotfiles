@@ -59,3 +59,4 @@ unset sh
 # fi
 
 eval "$(chef shell-init bash)"
+export GITHUB_URL=https://github.geo.apple.com/
