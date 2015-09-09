@@ -19,7 +19,7 @@ EXCLUDE='(setterupper|.el|~|README|lock|#|\.Trash)'
 cd $HOME
 for i in $(ls -a $DOTFILES_DIR | egrep -v "$EXCLUDE" | egrep -v "^\.+$") ; do
     if [ ! -d $HOME/$i ] ; then
-	CMD="ln -nfs $DOTFILES_DIR/$i"
+        CMD="ln -nfs $DOTFILES_DIR/$i"
     fi
     if [ -z $DEBUG ] ; then
         $($CMD)
