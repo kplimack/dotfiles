@@ -50,7 +50,7 @@ chsh -s $(which zsh)
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 BREW_APPS="pv tree autoconf automake watch mtr wget nmap bash bash-completion " \
-	  "zsh-syntax-highlighting "
+	  "zsh-syntax-highlighting keychain aws-keychain "
 	  "speedtest_cli aws-shell htop tmux unrar docker golang"
 BREW_CASKS="chefdk iterm2-beta dropbox virtualbox java"
 
