@@ -52,7 +52,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 BREW_APPS="pv tree autoconf automake watch mtr wget nmap bash bash-completion " \
 	  "zsh-syntax-highlighting keychain aws-keychain "
 	  "speedtest_cli aws-shell htop tmux unrar docker golang"
-BREW_CASKS="chefdk iterm2-beta dropbox virtualbox java"
+BREW_CASKS="chefdk iterm2-beta dropbox virtualbox java vagrant vagrant-completion"
 
 if [ ! -f ~/.brewhub ] ; then
     echo "\n\n"
