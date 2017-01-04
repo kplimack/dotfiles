@@ -51,17 +51,18 @@ if [ -f ~/.brewhub ] ; then
     . ~/.brewhub
 fi
 
-
 for sh in /etc/profile.d/*.sh ; do
     [ -r "$sh" ] && . "$sh"
 done
 unset sh
 
-# if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh && -f /usr/local/opt/chruby/share/chruby/auto.sh ]] ; then
-#     source /usr/local/opt/chruby/share/chruby/chruby.sh
-#     source /usr/local/opt/chruby/share/chruby/auto.sh
-# fi
-
 eval "$(chef shell-init zsh)"
 unsetopt nomatch
 export HOMEBREW_GITHUB_API_TOKEN="908637dbbe517159c01e2cdb412cfebf003d3dea"
+
+#
+# This must be at the bottom of ~/.zshrc
+#
+if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] ; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
