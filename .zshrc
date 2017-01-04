@@ -33,7 +33,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/sbin:/usr/local/go/bin:$HOME/go/bin
+export GOPATH=$HOME/go
 
 # Customize to your needs...
 
@@ -45,6 +46,9 @@ if [ -f ~/repos/dotfiles/.shell_common ] ; then
 fi
 if [ -f ~/.awsrc ] ; then
     . ~/.awsrc
+fi
+if [ -f ~/.brewhub ] ; then
+    . ~/.brewhub
 fi
 
 
@@ -58,5 +62,6 @@ unset sh
 #     source /usr/local/opt/chruby/share/chruby/auto.sh
 # fi
 
-eval "$(chef shell-init bash)"
+eval "$(chef shell-init zsh)"
 unsetopt nomatch
+export HOMEBREW_GITHUB_API_TOKEN="908637dbbe517159c01e2cdb412cfebf003d3dea"

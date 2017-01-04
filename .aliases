@@ -1,10 +1,9 @@
 alias watch='watch --i=0'
 alias phpinfo='php -r "phpinfo();"'
-alias acs='apt-cache search'
-alias agi='sudo apt-get install'
-alias mtr='mtr --curses'
-alias torbox='mv ~/Downloads/*.torrent ~/Dropbox/Dropbox/Torrents'
+alias mtr='sudo mtr --curses'
 alias gitup="git pull --rebase && git push"
+alias emacs='emacs -nw'
+
 if [ -f ~/dotfiles/.local_aliases ] ; then
    . ~/dotfiles/.local_aliases
 fi
@@ -12,5 +11,3 @@ fi
 if [ -f ~/.local_aliases ] ; then
     . ~/.local_aliases
 fi
-
-
