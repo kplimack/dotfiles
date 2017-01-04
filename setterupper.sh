@@ -49,7 +49,7 @@ chsh -s $(which zsh)
 #
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-BREW_APPS="pv tree autoconf automake watch mtr wget nmap bash bash-completion speedtest_cli aws-shell htop tmux unrar"
+BREW_APPS="pv tree autoconf automake watch mtr wget nmap bash bash-completion speedtest_cli aws-shell htop tmux unrar docker"
 BREW_CASKS="chefdk iterm2-beta dropbox virtualbox java"
 
 if [ ! -f ~/.brewhub ] ; then
