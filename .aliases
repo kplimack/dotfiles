@@ -2,7 +2,7 @@ alias watch='watch --i=0'
 alias phpinfo='php -r "phpinfo();"'
 alias mtr='sudo mtr --curses'
 alias gitup="git pull --rebase && git push"
-alias emacs='emacs -nw'
+alias emacs='/usr/local/bin/emacs-26.0.50'
 
 if [ -f ~/dotfiles/.local_aliases ] ; then
    . ~/dotfiles/.local_aliases

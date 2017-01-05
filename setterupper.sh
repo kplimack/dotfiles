@@ -1,5 +1,15 @@
 #!/bin/bash
 
+BREW_APPS=$(cat <<EOF
+       pv tree autoconf automake watch mtr wget nmap bash bash-completion
+       zsh-syntax-highlighting keychain aws-keychain speedtest_cli
+           aws-shell htop tmux unrar docker golang gnutls
+EOF
+         )
+
+BREW_CASKS="chefdk iterm2-beta dropbox virtualbox java vagrant"
+CHEF_GEMS="knife-spork knife-block knife-supermarket knife-ohno2 knife-cssh knife-solve knife-block"
+
 sudo -v
 
 if [ ! -z $DEBUG ] ; then
@@ -49,14 +59,6 @@ chsh -s $(which zsh)
 #
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-BREW_APPS=$(cat <<EOF
-	   pv tree autoconf automake watch mtr wget nmap bash bash-completion
-	   zsh-syntax-highlighting keychain aws-keychain speedtest_cli 
-           aws-shell htop tmux unrar docker golang
-EOF
-	 )
-
-BREW_CASKS="chefdk iterm2-beta dropbox virtualbox java vagrant"
 
 if [ ! -f ~/.brewhub ] ; then
     echo "\n\n"
@@ -77,22 +79,22 @@ eval "$(chef shell-init $SHELL)"
 
 # emacs setup
 
-if [ $INSTALL == 'source' ]; then
-    
-    if [ -e /usr/local/share/emacs ] ; then
-	sudo rm -rf /usr/local/share/emacs
-    fi
-    
-    cd repos
-    git clone -b emacs-24 git@github.com:emacs-mirror/emacs.git
-    cd emacs
-    ./autogen.sh
-    ./configure --without-x --with-ns
-    make && sudo make install
-elif [ $INSTALL == 'brew' ]; then
-    brew install --with-cocoa --srgb emacs
-    brew linkapps emacs
-fi
+# if [ $INSTALL == 'source' ]; then
+
+#     if [ -e /usr/local/share/emacs ] ; then
+#         sudo rm -rf /usr/local/share/emacs
+#     fi
+
+#     cd repos
+#     git clone -b emacs-24 git@github.com:emacs-mirror/emacs.git
+#     cd emacs
+#     ./autogen.sh
+#     ./configure --without-x --with-ns
+#     make && sudo make install
+# elif [ $INSTALL == 'brew' ]; then
+#     brew install --with-cocoa --srgb emacs
+#     brew linkapps emacs
+# fi
 
 mkdir -p $HOME/.emacs.d/personal/savefile/
 touch $HOME/.emacs.d/personal/savefile/savehist
@@ -106,6 +108,17 @@ fi
 # GoLang
 GO_PATH=$HOME/go
 mkdir $GO_PATH
+
+#
+# ChefDK
+#
+# chefdk was installed via Homebrew, just configure it
+#
+
+mkdir -p $HOME/.chef
+mkdir -p $HOME/repos
+
+/opt/chefdk/embedded/bin/gem install $CHEF_GEMS --verbose --update
 
 echo "Complete. Loading Z-Shell"
 cd $HOME && zsh
