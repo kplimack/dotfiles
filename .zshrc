@@ -58,7 +58,6 @@ unset sh
 
 eval "$(chef shell-init zsh)"
 unsetopt nomatch
-export HOMEBREW_GITHUB_API_TOKEN="908637dbbe517159c01e2cdb412cfebf003d3dea"
 
 #
 # This must be at the bottom of ~/.zshrc
