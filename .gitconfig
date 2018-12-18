@@ -1,26 +1,43 @@
 [user]
 	name = Jake Plimack
 	email = jake.plimack@gmail.com
+	signingkey = 33BEDD1AD4B1BD5660D54087F7589E55177BEA64
 [color]
 	branch = auto
 	diff = auto
 	status = auto
+	ui = true
 [color "branch"]
 	current = yellow reverse
     local = yellow
     remote = green
 [color "diff"]
-	meta = yellow bold
-    frag = magenta bold
-    old = red
-    new = cyan
+	meta = yellow
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
 [color "status"]
 	added = yellow
     changed = green
     untracked = cyan
 [alias]
-	tree = log --graph --pretty=oneline --abbrev-commit --decorate --color --all
-	local = log --pretty=oneline @{u}..HEAD
+    amend = commit -s --amend # quick amend: Amend my staged changes to the last commit, keeping the same commit message
+    cm = commit -s -m
+    co = checkout
+    cob = checkout -b
+    commit = commit -s
+    cp = cherry-pick
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    la = "!git config -l | grep alias | cut -c 7-"
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    local = log --pretty=oneline @{u}..HEAD
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    new = checkout -b
+    st = status
+    tree = log --graph --pretty=oneline --abbrev-commit --decorate --color --all
+    undo-commit = reset --soft HEAD~1
 [apply]
 	whitespace = strip
 [pager]
@@ -33,3 +50,16 @@
 	default = simple
 [core]
     ignorecase = false
+	editor = emacs -nw
+	#pager = diff-so-fancy | less --tabs=4 -RFX
+[url "ssh://git@github.com/sendgrid"]
+	insteadOf = https://github.com/sendgrid
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

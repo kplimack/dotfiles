@@ -122,3 +122,5 @@ mkdir -p $HOME/repos
 
 echo "Complete. Loading Z-Shell"
 cd $HOME && zsh
+
+go get -u github.com/justjanne/powerline-go

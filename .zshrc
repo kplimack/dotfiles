@@ -29,13 +29,17 @@ ZSH_THEME="gnzh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
+#plugins=(git)
 source $ZSH/oh-my-zsh.sh
+
+autoload -U colors; colors
+source /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh
+RPROMPT='%{$fg[green]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
 export PATH=$PATH:/usr/local/sbin:/usr/local/go/bin:$HOME/go/bin
 export GOPATH=$HOME/go
-
+export AWS_DEFAULT_REGION='us-east-1'
+export HAB_ORIGIN_KEYS=jplimack
 # Customize to your needs...
 
 if [ -f ~/.shell_common ] ; then
@@ -51,6 +55,10 @@ if [ -f ~/.brewhub ] ; then
     . ~/.brewhub
 fi
 
+if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
+  . ~/.config/exercism/exercism_completion.zsh
+fi
+
 for sh in /etc/profile.d/*.sh ; do
     [ -r "$sh" ] && . "$sh"
 done
@@ -64,4 +72,29 @@ unsetopt nomatch
 #
 if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] ; then
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+eval "$(pyenv init -)"
+source <(kubectl completion zsh)
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+TILLER_NAMESPACE=operations
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export AWS_PROFILE=opseng-production
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+function powerline_precmd() {
+    PS1="$(~/go/bin/powerline-go -error $? -shell zsh -newline -colorize-hostname)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
 fi

@@ -19,3 +19,5 @@ PATH=$PATH:$HOME/bin
 export PATH
 
 ssh-add
+PATH=$PATH:/opt/metasploit-framework/bin
+export PATH=$PATH:/opt/metasploit-framework/bin
